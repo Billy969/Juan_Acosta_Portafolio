@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,66 +13,87 @@
 <header class="header-footer">
   <div class="footer-left">
     <img src="img/unity-logo.png" alt="Unity Logo" class="unity-logo" />
-    <span> My Portfolio</span>
+    <span data-en="My Portfolio" data-es="Mi Portafolio"> My Portfolio</span>
   </div>
-  <div class="footer-right">
-    <a href="https://www.linkedin.com/in/juanjo-acosta-burbano/" target="_blank" aria-label="LinkedIn">
-      <img src="img/icon-linkedin.png" alt="LinkedIn" />
-    </a>
-    <a href="https://github.com/Billy969" target="_blank" aria-label="GitHub">
-      <img src="img/icon-github.png" alt="GitHub" />
-    </a>
-    <a href="mailto:juanjoseacostaburbano@gmail.com" aria-label="Mail">
-      <img src="img/icon-mail.png" alt="Mail" />
-    </a>
-    <a href="https://juanin96.itch.io/" target="_blank" aria-label="Itch.io">
-      <img src="img/icon-itchio.png" alt="Itch.io" />
-    </a>
-    <a href="https://wa.me/573146958870" target="_blank" aria-label="Whatsapp">
-      <img src="img/icon-whatsapp.png" alt="Whatsapp" />
-    </a>
-    <a href="img/CV.Juan Acosta ingles.pdf" download aria-label="Descargar CV" class="resume-link">
-      <img src="img/icon-resume.png" alt="Resume" /> RESUME
-    </a>
+  <div class="language-switch">
+    <button id="en-btn" class="lang-btn active">ENGLISH</button> | 
+    <button id="es-btn" class="lang-btn">ESPAÑOL</button>
   </div>
 </header>
 
 <nav class="side-navbar">
     <ul>
-        <li><a href="#intro" data-section="intro">Intro</a></li>
-        <li><a href="#about-me" data-section="about-me">About Me</a></li>
-        <li><a href="#roles" data-section="roles">Roles</a></li>
-        <li><a href="#proyectos" data-section="proyectos">Projects</a></li>
-        <li><a href="#prototipos" data-section="prototipos">Prototypes</a></li>
-        <li><a href="#habilidades" data-section="habilidades">Skills</a></li>
+        <li><a href="#intro" data-section="intro" data-en="Intro" data-es="Intro">Intro</a></li>
+        <li><a href="#about-me" data-section="about-me" data-en="About Me" data-es="Sobre mí">About Me</a></li>
+        <li><a href="#roles" data-section="roles" data-en="Roles" data-es="Roles">Roles</a></li>
+        <li><a href="#unity" data-section="unity" data-en="Unity: Projects & Prototypes" data-es="Unity: Proyectos y prototipos">Unity: Projects & Prototypes</a></li>
+        <li><a href="#data" data-section="data" data-en="Data: Projects" data-es="Datos: Proyectos">Data: Projects</a></li>
+        <li><a href="#habilidades" data-section="habilidades" data-en="Skills" data-es="Habilidades">Skills</a></li>
     </ul>
 </nav>
 
 <section class="intro-container section" id="intro">
   <img src="img/tu-foto.jpg" alt="Juan Jose Acosta Burbano" class="profile-pic" />
   <div class="intro-text">
-    <h1>Hello! My name is Juan Acosta</h1>
+    <h1 data-en="Hello! My name is Juan Acosta" data-es="¡Hola! Mi nombre es Juan Acosta">Hello! My name is Juan Acosta</h1>
     <p id="dynamic-title" class="dynamic-title"></p>
-    <p>Passionate about game development and the power of programming and IA.</p>
+    <p id="passion-text" data-en="Passionate about game development and the power of programming and IA." data-es="Apasionado por el desarrollo de videojuegos y el poder de la programación y la IA.">Passionate about game development and the power of programming and IA.</p>
+    <div class="social-icons-box">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/juanjo-acosta-burbano/" target="_blank" aria-label="LinkedIn">
+          <img src="img/icon-linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/Billy969" target="_blank" aria-label="GitHub">
+          <img src="img/icon-github.png" alt="GitHub" />
+        </a>
+        <a href="mailto:juanjoseacostaburbano@gmail.com" aria-label="Mail">
+          <img src="img/icon-mail.png" alt="Mail" />
+        </a>
+        <a href="https://juanin96.itch.io/" target="_blank" aria-label="Itch.io">
+          <img src="img/icon-itchio.png" alt="Itch.io" />
+        </a>
+        <a href="https://wa.me/573146958870" target="_blank" aria-label="Whatsapp">
+          <img src="img/icon-whatsapp.png" alt="Whatsapp" />
+        </a>
+        <a href="img/CV.Juan Acosta ingles.pdf" download aria-label="Descargar CV" class="resume-link">
+          <img src="img/icon-resume.png" alt="Resume" /> <span data-en="RESUME" data-es="CV">RESUME</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <main>
   <section id="about-me" class="section">
-      <h2>ABOUT ME</h2>
-      <p>I'm an engineer with experience in data analysis, operations, and project management. 
+      <h2 data-en="ABOUT ME" data-es="SOBRE MÍ">ABOUT ME</h2>
+      <p data-en="I'm an engineer with experience in data analysis, operations, and project management. 
         I have knowledge of Unity and C# for game creation and enemy mechanics, and am currently focused on data engineering solutions. 
         I'm proficient in Python, SQL, Power BI, Azure, AWS, and Google Cloud for ETL processes, data visualization, and predictive modeling. 
-        I'm recognized for my logical thinking, organizational skills, and ability to work effectively in multidisciplinary teams.</p>
+        I'm recognized for my logical thinking, organizational skills, and ability to work effectively in multidisciplinary teams."
+        data-es="Soy ingeniero con experiencia en análisis de datos, operaciones y gestión de proyectos. 
+        Tengo conocimientos de Unity y C# para la creación de juegos y mecánicas de enemigos, y actualmente me enfoco en soluciones de ingeniería de datos. 
+        Manejo Python, SQL, Power BI, Azure, AWS y Google Cloud para procesos ETL, visualización de datos y modelado predictivo. 
+        Me reconocen por mi pensamiento lógico, organización y capacidad para trabajar en equipos multidisciplinarios.">
+        I'm an engineer with experience in data analysis, operations, and project management. 
+        I have knowledge of Unity and C# for game creation and enemy mechanics, and am currently focused on data engineering solutions. 
+        I'm proficient in Python, SQL, Power BI, Azure, AWS, and Google Cloud for ETL processes, data visualization, and predictive modeling. 
+        I'm recognized for my logical thinking, organizational skills, and ability to work effectively in multidisciplinary teams.
+      </p>
   </section>
 
   <section id="roles" class="section">
-    <h2>Role(s) and responsibilities:</h2>
+    <h2 data-en="Role(s) and responsibilities:" data-es="Rol(es) y responsabilidades:">Role(s) and responsibilities:</h2>
     <div class="role-category">
-        <h3>Data Engineering & Analytics</h3>
-        <p>Designed and implemented solutions for data collection, transformation, and visualization. 
+        <h3 data-en="Data Engineering & Analytics" data-es="Ingeniería y Analítica de Datos">Data Engineering & Analytics</h3>
+        <p data-en="Designed and implemented solutions for data collection, transformation, and visualization. 
        Experienced in SQL, Python, and cloud environments to build pipelines, analyze datasets, 
-       and create insights that support decision-making and automation.</p>
+       and create insights that support decision-making and automation."
+       data-es="Diseñé e implementé soluciones para la recolección, transformación y visualización de datos. 
+       Experiencia en SQL, Python y entornos cloud para construir pipelines, analizar datasets y crear insights que apoyan la toma de decisiones y automatización.">
+        Designed and implemented solutions for data collection, transformation, and visualization. 
+       Experienced in SQL, Python, and cloud environments to build pipelines, analyze datasets, 
+       and create insights that support decision-making and automation.
+        </p>
         <br>
         <ul class="functions-list">
             <li>Python (Pandas, NumPy)</li>
@@ -85,9 +106,13 @@
         </ul>
     </div>
     <div class="role-category">
-        <h3>Game Development</h3>
-        <p> Designed and programmed core gameplay systems in Unity, including combat, interaction, menus, and animated scene transitions. 
-          I also built dynamic animations 2D and pixel art.</p>
+        <h3 data-en="Game Development" data-es="Desarrollo de Videojuegos">Game Development</h3>
+        <p data-en="Designed and programmed core gameplay systems in Unity, including combat, interaction, menus, and animated scene transitions. 
+          I also built dynamic animations 2D and pixel art."
+          data-es="Diseñé y programé sistemas de gameplay en Unity incluyendo combate, interacción, menús y transiciones animadas de escenas. También desarrollé animaciones dinámicas 2D y pixel art.">
+          Designed and programmed core gameplay systems in Unity, including combat, interaction, menus, and animated scene transitions. 
+          I also built dynamic animations 2D and pixel art.
+        </p>
         <br>
         <ul class="functions-list">
             <li>C#</li>
@@ -99,8 +124,11 @@
         </ul>
     </div>
     <div class="role-category">
-        <h3>Programming and General Development</h3>
-        <p>Developed automation scripts and designed interactive, game-inspired websites that blend functionality with creative design.</p>
+        <h3 data-en="Programming and General Development" data-es="Programación y Desarrollo General">Programming and General Development</h3>
+        <p data-en="Developed automation scripts and designed interactive, game-inspired websites that blend functionality with creative design."
+          data-es="Desarrollé scripts de automatización y diseñé sitios web interactivos inspirados en videojuegos que combinan funcionalidad y diseño creativo.">
+          Developed automation scripts and designed interactive, game-inspired websites that blend functionality with creative design.
+        </p>
         <br>
         <ul class="functions-list">
             <li>C#</li>
@@ -113,68 +141,75 @@
     </div>
   </section>
 
-  <section id="proyectos" class="section">
-    <h2>My Projects</h2>
+  <section id="unity" class="section">
+    <h2 data-en="Unity: Projects & Prototypes" data-es="Unity: Proyectos y prototipos">Unity: Projects & Prototypes</h2>
+    <div class="projects-grid"></div>
+      <h2 data-en="My projects" data-es="Mi proyectos">My Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <img src="img/Animarun.png" alt="Proyecto Unity" />
-        <h3>Game: Animarun</h3>
-        <p>Recover the child's 3 souls and return Moloch to Hell.</p>
-        <a href="https://mgdz18.itch.io/animarun" target="_blank">Try it Here</a>
+        <h3 data-en="Game: Animarun" data-es="Juego: Animarun">Game: Animarun</h3>
+        <p data-en="Recover the child's 3 souls and return Moloch to Hell." data-es="Recupera los tres fragmentos del alma del niño y regresa a Moloch al infierno">Recover the child's 3 souls and return Moloch to Hell.</p>
+        <a href="https://mgdz18.itch.io/animarun" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
       <div class="project-card">
         <img src="img/Windmayhem.png" alt="Proyecto Unity" />
-        <h3>Game: Wind Mayhem</h3>
-        <p>Participation in the "Cali Game Jam" with a wind theme, with different entertaining mini-games.</p>
-        <a href="https://tayronagames.itch.io/wind-mayhem" target="_blank">Try it Here</a>
+        <h3 data-en="Game: Wind Mayhem" data-es="Juego: Wind Mayhem">Game: Wind Mayhem</h3>
+        <p data-en="Participation in the Cali Game Jam with a wind theme, with different entertaining mini-games." data-es="Participacion en la Cali Game Jam con tema de viento, con diferentes mini-juegos entretenidos">Participation in the "Cali Game Jam" with a wind theme, with different entertaining mini-games.</p>
+        <a href="https://tayronagames.itch.io/wind-mayhem" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
       <div class="project-card">
         <img src="img/Freeyourskull.png" alt="Proyecto Unity" />
-        <h3>Game: Free your Skull</h3>
-        <p>Put the pieces together to achieve your freedom and survive.</p>
-        <a href="https://gleon97.itch.io/free-your-skull" target="_blank">Try it Here</a>
+        <h3 data-en="Game: Free your Skull" data-es="Juego: Free your skull">Game: Free your Skull</h3>
+        <p data-en="Put the pieces together to achieve your freedom and survive." data-es="Pon las piezas juntas y alcanza tu libertad para sobrevivir">Put the pieces together to achieve your freedom and survive.</p>
+        <a href="https://gleon97.itch.io/free-your-skull" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
       <div class="project-card">
         <img src="img/howlofliberty.png" alt="Proyecto Unity" />
-        <h3>Game: Howl of Liberty</h3>
-        <p>Explore, survive and claim your freedom.</p>
-        <a href="https://juanin96.itch.io/howl-of-liberty" target="_blank">Try it Here</a>
+        <h3 data-en="Game: Howl of Liberty" data-es="Juego: Howl of liberty">Game: Howl of Liberty</h3>
+        <p data-en="Explore, survive and claim your freedom." data-es="Explora, sobrevive y reclama tu libertad">Explore, survive and claim your freedom.</p>
+        <a href="https://juanin96.itch.io/howl-of-liberty" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
     </div>
-  </section>
-
-  <section id="prototipos" class="section">
-    <h2>My Prototypes</h2>
+    <h2 data-en="My Prototypes" data-es="Mis prototipos">My Prototypes</h2>
     <div class="projects-grid">
       <div class="project-card">
         <img src="img/Elataquedelacomida.png" alt="Prototipo 1" />
         <h3>El ataque de la comida</h3>
-        <p>Clicking game to score the most points before time runs out.</p>
-        <a href="https://juanin96.itch.io/el-ataque-de-la-comida" target="_blank">Try it Here</a>
+        <p data-en="Clicking game to score the most points before time runs out." data-es="Haz clic en el juego para sumar la mayor cantidad de puntos antes de que se acabe el tiempo.">Clicking game to score the most points before time runs out.</p>
+        <a href="https://juanin96.itch.io/el-ataque-de-la-comida" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
       <div class="project-card">
         <img src="img/Futbolgeneration.png" alt="Prototipo 2" />
         <h3>Futbol generation</h3>
-        <p>Programmed core gameplay features such as player movement, ball control, goal detection, and basic AI behavior.</p>
-        <a href="https://juanin96.itch.io/futbol-generation" target="_blank">Try it Here</a>
+        <p data-en="Programmed core gameplay features such as player movement, ball control, goal detection, and basic AI behavior." data-es="Funciones básicas del juego programadas, como el movimiento del jugador, el control del balón, la detección de goles y el comportamiento básico de la IA.">Programmed core gameplay features such as player movement, ball control, goal detection, and basic AI behavior.</p>
+        <a href="https://juanin96.itch.io/futbol-generation" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
       <div class="project-card">
         <img src="img/Subwayfarm.png" alt="Prototipo 3" />
         <h3>Subway farm</h3>
-        <p>Programmed the jump mechanic, added background music, and implemented character animations using Unity’s Animator system.</p>
-        <a href="https://juanin96.itch.io/subway-farm" target="_blank">Try it Here</a>
+        <p data-en="Programmed the jump mechanic, added background music, and implemented character animations using Unity’s Animator system." data-es="Programé la mecánica de salto, agregué música de fondo e implementé animaciones de personajes utilizando el sistema Animator de Unity.">Programmed the jump mechanic, added background music, and implemented character animations using Unity’s Animator system.</p>
+        <a href="https://juanin96.itch.io/subway-farm" target="_blank" data-en="Try it Here" data-es="Pruebalo Aquí">Try it Here</a>
       </div>
       <div class="project-card">
         <img src="img/spaceinvaders.png" alt="Prototipo 4" />
         <h3>Space invaders</h3>
-        <p>Programmed the jump mechanic, added background music, and implemented character animations using Unity’s Animator system.</p>
-        <a href="https://github.com/Billy969/Mi-propio-Space-invaders" target="_blank">Check out the repository Here</a>
+        <p data-en="Prototype of the famous game Space-Invader, where you control a ship and destroy the enemy." data-es="Prototipo del famoso juego Space-Invader, donde manejas una nave y destruiras al enemigo.">Prototype of the famous game Space-Invader, where you control a ship and destroy the enemy.</p>
+        <a href="https://github.com/Billy969/Mi-propio-Space-invaders" target="_blank" data-en="Check out the repository Here" data-es="Mira el repositorio aquí">Check out the repository Here</a>
       </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="data" class="section">
+    <h2 data-en="Data: Projects" data-es="Datos: Proyectos">Data: Projects</h2>
+    <div class="projects-grid">
+      <!-- Aquí irán tus proyectos de datos -->
     </div>
   </section>
 
   <section id="habilidades" class="section">
-    <h2>Skills</h2>
+    <h2 data-en="Skills" data-es="Habilidades">Skills</h2>
     <ul class="skills-list">
       <li><img src="img/unity-logo.png" alt="Unity"> Unity</li>
       <li><img src="img/icons-python.png" alt="Python"> Python</li>
@@ -193,7 +228,7 @@
 <footer>
   <div class="footer-left">
     <img src="img/unity-logo.png" alt="Unity Logo" class="unity-logo" />
-    <span>My Portfolio</span>
+    <span data-en="My Portfolio" data-es="Mi Portafolio">My Portfolio</span>
   </div>
   <div class="footer-right">
     <a href="https://www.linkedin.com/in/juanjo-acosta-burbano/" target="_blank" aria-label="LinkedIn">

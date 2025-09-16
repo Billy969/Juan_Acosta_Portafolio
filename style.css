@@ -647,3 +647,100 @@ footer {
     font-size: 0.9rem; /* Ajuste para móviles */
   }
 }
+
+/* ... (todo tu CSS igual que antes, solo agrega esto al final para los nuevos elementos) ... */
+
+/* Language Switch Buttons */
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+.lang-btn {
+  background: #7c3aed;
+  border: none;
+  color: #fff;
+  padding: 0.4em 1em;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background: #a78bfa;
+  color: #222;
+}
+
+/* Social Icons under intro */
+.social-icons {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  filter: invert(83%) sepia(7%) saturate(390%) hue-rotate(180deg) brightness(96%) contrast(93%);
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  filter: invert(45%) sepia(71%) saturate(5217%) hue-rotate(252deg) brightness(102%) contrast(101%);
+  transform: translateY(-3px) scale(1.10);
+}
+
+.social-icons .resume-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.social-icons .resume-link img {
+  width: 20px;
+}
+
+@media (max-width: 600px) {
+  .social-icons {
+    gap: 0.5rem;
+  }
+}
+
+/* Social Icons Box - semitransparente solo para los iconos bajo la intro */
+.social-icons-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.1rem;
+  padding: 0.7rem 1.8rem;
+  background: rgba(31, 28, 44, 0.7); /* Fondo semitransparente, puedes ajustar opacidad y color */
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(124, 58, 237, 0.15);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-icons {
+  margin: 0; /* Eliminas el margin-top aquí porque ahora el box tiene padding/margin */
+}
+
+/* Responsive para cuadro de iconos */
+@media (max-width: 600px) {
+  .social-icons-box {
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+  }
+}

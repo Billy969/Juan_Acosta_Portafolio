@@ -1,82 +1,63 @@
-// Script.js
-
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('.side-navbar a');
 const particlesContainer = document.createElement('div');
 particlesContainer.classList.add('particles');
 document.body.appendChild(particlesContainer);
 
+// Traducciones para títulos dinámicos
+const dynamicTitles = {
+  en: ["Petroleum Engineer", "Software Developer", "Data Engineer"],
+  es: ["Ingeniero de Petróleos", "Desarrollador de Software", "Ingeniero de Datos"]
+};
+let lang = "en"; // Estado global de idioma
+
 const dynamicTitleElement = document.getElementById('dynamic-title');
-const titles = [
-    "Petroleum Engineer",
-    "Software Developer",
-    "Data Engineer"
-];
 let titleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 150; // Velocidad de escritura
-const deletingSpeed = 75; // Velocidad de borrado (más rápida)
-const pauseTime = 1500; // Tiempo de pausa antes de borrar o escribir el siguiente
+const typingSpeed = 150;
+const deletingSpeed = 90;
+const pauseTime = 1500;
 
 function typeEffect() {
-    const currentTitle = titlesLoop(titleIndex);
+    const currentTitle = dynamicTitles[lang][titleIndex % dynamicTitles[lang].length];
 
     if (!isDeleting) {
-        // Escribiendo
         dynamicTitleElement.textContent = currentTitle.substring(0, charIndex + 1);
         charIndex++;
     } else {
-        // Borrando
         dynamicTitleElement.textContent = currentTitle.substring(0, charIndex - 1);
         charIndex--;
     }
 
-    // Lógica para cambiar de estado (escribir -> borrar, borrar -> siguiente)
     if (charIndex === currentTitle.length && !isDeleting) {
-        // Terminó de escribir, pasar a borrar
         isDeleting = true;
-        setTimeout(typeEffect, pauseTime); // Pausa antes de borrar
+        setTimeout(typeEffect, pauseTime);
     } else if (charIndex === 0 && isDeleting) {
-        // Terminó de borrar, pasar al siguiente título
         isDeleting = false;
         titleIndex++;
-        if (titleIndex >= titles.length) {
-            titleIndex = 0; // Reiniciar el bucle
-        }
-        setTimeout(typeEffect, typingSpeed + pauseTime); // Pequeña pausa antes de escribir el siguiente
+        if (titleIndex >= dynamicTitles[lang].length) titleIndex = 0;
+        setTimeout(typeEffect, typingSpeed + pauseTime);
     } else {
-        // Continuar escribiendo o borrando
         setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
     }
 }
 
-function titlesLoop(index) {
-    return titles[(index) % titles.length];
-}
-
 // Función para revelar secciones al hacer scroll
 function revealOnScroll() {
-    const triggerBottom = window.innerHeight * 0.8; // Reduce el umbral para que aparezcan antes
-
+    const triggerBottom = window.innerHeight * 0.8;
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
         const sectionId = section.id;
         const correspondingNavLink = document.querySelector(`.side-navbar a[data-section="${sectionId}"]`);
-
         if (sectionTop < triggerBottom && sectionTop > -section.offsetHeight) {
-            // Agrega la clase 'visible' cuando la sección entra en el viewport
             section.classList.add('visible');
-            // Activa el enlace de navegación correspondiente
             if (correspondingNavLink) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 correspondingNavLink.classList.add('active');
             }
         } else {
-            // Opcional: Para que las secciones se "oculten" si vuelves a subir
-            // section.classList.remove('visible');
-            // Desactiva el enlace de navegación si la sección no está visible
-            if (correspondingNavLink && sectionTop > triggerBottom) { // Solo desactiva si está por debajo del umbral
+            if (correspondingNavLink && sectionTop > triggerBottom) {
                 correspondingNavLink.classList.remove('active');
             }
         }
@@ -87,17 +68,13 @@ function revealOnScroll() {
 document.querySelectorAll('.side-navbar a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-
         if (targetSection) {
             window.scrollTo({
-                top: targetSection.offsetTop - 70, // Ajusta el offset para el header fijo
+                top: targetSection.offsetTop - 70,
                 behavior: 'smooth'
             });
-
-            // Actualiza la clase activa inmediatamente al hacer clic
             navLinks.forEach(link => link.classList.remove('active'));
             this.classList.add('active');
         }
@@ -106,39 +83,66 @@ document.querySelectorAll('.side-navbar a').forEach(anchor => {
 
 // Generar partículas de fondo
 function generateParticles() {
-    const numParticles = 30; // Cantidad de partículas
+    const numParticles = 30;
     for (let i = 0; i < numParticles; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
-        const size = Math.random() * 8 + 2; // Tamaño entre 2px y 10px
+        const size = Math.random() * 8 + 2;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
         particle.style.left = `${Math.random() * 100}vw`;
         particle.style.top = `${Math.random() * 100}vh`;
-        particle.style.animationDuration = `${Math.random() * 10 + 5}s`; // Duración entre 5 y 15 segundos
-        particle.style.animationDelay = `${Math.random() * 5}s`; // Retraso aleatorio
-        particle.style.setProperty('--y-end', `${Math.random() * 200 - 100}vh`); // Desplazamiento vertical aleatorio
-        particle.style.setProperty('--x-end', `${Math.random() * 200 - 100}vw`); // Desplazamiento horizontal aleatorio
-        particle.style.setProperty('--scale-end', `${Math.random() * 0.5 + 0.5}`); // Escala final
+        particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        particle.style.setProperty('--y-end', `${Math.random() * 200 - 100}vh`);
+        particle.style.setProperty('--x-end', `${Math.random() * 200 - 100}vw`);
+        particle.style.setProperty('--scale-end', `${Math.random() * 0.5 + 0.5}`);
         particlesContainer.appendChild(particle);
     }
 }
 
-// Evento que se dispara cuando todo el contenido del DOM ha sido cargado
+// Cambia todos los textos según idioma
+function setLanguage(newLang) {
+    lang = newLang;
+
+    // Navegación
+    document.querySelectorAll('.side-navbar a').forEach(link => {
+        if (link.dataset[lang]) link.textContent = link.dataset[lang];
+    });
+
+    // H1, H2, y otros data-en/data-es
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+    });
+
+    // Texto de los botones
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(lang + '-btn').classList.add('active');
+
+    // Reiniciar typing effect con títulos del idioma correcto
+    titleIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+    // Detener animación previa (si la hay)
+    clearTimeout(window.typeTimeout);
+    typeEffect();
+}
+
+// Eventos de cambio de idioma
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('en-btn').addEventListener('click', () => setLanguage('en'));
+    document.getElementById('es-btn').addEventListener('click', () => setLanguage('es'));
+
     // Animación de escritura para el título principal
     const introH1 = document.querySelector('.intro-text h1');
-    introH1.style.width = '0'; // Asegura que empiece invisible
-
+    introH1.style.width = '0';
     setTimeout(() => {
         introH1.style.animation = 'typing 2s steps(28, end) forwards, blink-caret .75s step-end infinite';
-    }, 100); // Pequeño retraso para asegurar que CSS se aplique
-
-    generateParticles(); // Iniciar la generación de partículas
-    typeEffect(); // Iniciar el efecto de texto dinámico
+    }, 100);
+    generateParticles();
+    typeEffect();
 });
 
 // Eventos de scroll y carga para revelar secciones
 window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll); // Para que se active al cargar la página por si hay contenido en la vista
-
+window.addEventListener('load', revealOnScroll);
