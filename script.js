@@ -10,7 +10,7 @@ const dynamicTitleElement = document.getElementById('dynamic-title');
 const titles = [
     "Petroleum Engineer",
     "Software Developer",
-    "Game Developer Jr."
+    "Data Engineer"
 ];
 let titleIndex = 0;
 let charIndex = 0;
